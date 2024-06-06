@@ -5,8 +5,8 @@ Binary Lifting is a powerful technique used on trees to efficiently answer queri
 
 1. Preprocessing:
 
-    - For each node, create a table up[node][i] that stores the 2^i-th ancestor of that node.
-    - This table is filled iteratively. For example, up[node][0] is the direct parent of the node, up[node][1] is the grandparent, up[node][2] is the great-grandparent, and so on.
+    - For each node, create a table `up[node][i]` that stores the 2^i-th ancestor of that node.
+    - This table is filled iteratively. For example, `up[node][0]` is the direct parent of the node, `up[node][1]` is the grandparent, `up[node][2]` is the great-grandparent, and so on.
 
 2. Querying:
 
@@ -14,12 +14,12 @@ Binary Lifting is a powerful technique used on trees to efficiently answer queri
     - Starting from the node, iteratively "jump" up the tree using the precomputed up table. For each '1' bit in the binary representation of k, move to the corresponding ancestor.
 
 Example:
-Let's say you want to find the 7th ancestor of node 'x' (7 in binary is 111).
+Let's say you want to find the 7th ancestor of node `x` (7 in binary is 111).
 
-1. Jump to the 2^0-th ancestor (1st ancestor) of 'x' using up[x][0].
-2. Jump to the 2^1-th ancestor (2nd ancestor) of the current node using up[current_node][1].
-3. Jump to the 2^2-th ancestor (4th ancestor) of the current node using up[current_node][2].
-You have now reached the 7th ancestor of node 'x'.
+1. Jump to the 2^0-th ancestor (1st ancestor) of `x` using `up[x][0]`.
+2. Jump to the 2^1-th ancestor (2nd ancestor) of the current node using `up[current_node][1]`.
+3. Jump to the 2^2-th ancestor (4th ancestor) of the current node using `up[current_node][2]`.
+You have now reached the 7th ancestor of node `x`.
 
 ```cpp
 #include <bits/stdc++.h>
