@@ -21,8 +21,7 @@ Let's say you want to find the 7th ancestor of node 'x' (7 in binary is 111).
 3. Jump to the 2^2-th ancestor (4th ancestor) of the current node using up[current_node][2].
 You have now reached the 7th ancestor of node 'x'.
 
-```
-c++
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
